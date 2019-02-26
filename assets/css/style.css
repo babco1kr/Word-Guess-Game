@@ -1,0 +1,28 @@
+/* body {
+    background-image: url(../images/Warcraft\ background.jpg);
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+.logo {
+    margin-left: auto;
+}
+.bfalogo {
+    height: 15%;
+    width: 15%;
+}
+
+header {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    color: #ffffff;
+} */
+
+body {
+    font-size: 48px;
+}
