@@ -18,10 +18,11 @@ var guesses = "";
 console.log(selection);
 console.log(letters[2]);
 
-
-for (i = 0; i < selectionLength; i++) {
+function showWord(arr){
+for (i = 0; i < arr.length; i++) {
     dashes [i] = "-";
     document.write(dashes[i]);
+}
 };
 
 
@@ -30,6 +31,8 @@ console.log(dashes);
 // for (i = attempts; i > 0; i--) {
 //     document.getElementById("remaining").innerHTML =  i;
 // }
+
+showWord (letters);
 
 document.onkeypress = function(event) {
     var letterGuessed = String.fromCharCode(event.keyCode);
