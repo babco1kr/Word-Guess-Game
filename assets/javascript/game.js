@@ -11,7 +11,7 @@ var selectionLength = selection.length;
 var dashes = [selectionLength];
 var attempts = selectionLength +2;
 var letters = selection.split("");
-var guesses;
+var guesses = "";
 
 // console.log(selectionLength);
 
@@ -21,7 +21,7 @@ console.log(letters[2]);
 
 for (i = 0; i < selectionLength; i++) {
     document.write("-");
-}
+};
 
 
 // for (i = attempts; i > 0; i--) {
@@ -32,4 +32,4 @@ document.onkeypress = function(event) {
     var letterGuessed = String.fromCharCode(event.keyCode);
     guesses = guesses + letterGuessed;
     document.getElementById("guess").innerHTML = guesses;
-}
+};
