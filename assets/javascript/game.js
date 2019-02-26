@@ -8,7 +8,7 @@ var game = ["Holy", "Shadow", "Assassination", "Frost", "Dagger", "Sword", "Shie
 var chosen = Math.floor(Math.random()*25);
 var selection = game[chosen];
 var selectionLength = selection.length;
-var dashes = [selectionLength];
+var dashes = [];
 var attempts = selectionLength +2;
 var letters = selection.split("");
 var guesses = "";
@@ -20,9 +20,12 @@ console.log(letters[2]);
 
 
 for (i = 0; i < selectionLength; i++) {
-    document.write("-");
+    dashes [i] = "-";
+    document.write(dashes[i]);
 };
 
+
+console.log(dashes);
 
 // for (i = attempts; i > 0; i--) {
 //     document.getElementById("remaining").innerHTML =  i;
