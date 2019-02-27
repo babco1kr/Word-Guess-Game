@@ -77,6 +77,8 @@ document.onkeypress = function(event) {
     if (selection === answer) {
         document.getElementById("game").innerHTML = answer;
         alert("You win!");
+        guesses = "";
+        document.getElementById("guess").innerHTML = guesses;
         start();
     }
     else if (attempts == 0) {
