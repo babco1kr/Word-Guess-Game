@@ -14,8 +14,6 @@ var dashes;
 var attempts;
 var guesses;
 var display;
-var win;
-var lettersUsedArray = [];
 var answer;
 
 
@@ -28,7 +26,6 @@ function start()  {
     attempts = 0;
     guesses = "";
     display = "";
-    win = selection.length;
     for (i = 0; i < letters.length; i++) {
         dashes [i] = "_ ";
         display = display + dashes[i];
@@ -49,7 +46,6 @@ function check (item) {
     for (i = 0; i < letters.length; i++) {
         if (item == letters[i]) {
             dashes[i] = item;
-            win--;
         }
         display = display + dashes[i];
         answer = dashes.join("");
@@ -79,10 +75,14 @@ document.onkeypress = function(event) {
     check(letterGuessed.toUpperCase());
     // Checking to see if game is over
     if (selection === answer) {
+        document.getElementById("game").innerHTML = answer;
         alert("You win!");
         start();
     }
-    else if (attempts < 0) {
+    else if (attempts == 0) {
+        alert("Try again")
+        guesses = "";
+        document.getElementById("guess").innerHTML = guesses;
         start();
     }
 };
