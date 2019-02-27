@@ -4,21 +4,29 @@ var game = ["HOLY", "SHADOW", "ASSASSINATION", "FROST", "DAGGER", "SWORD", "SHIE
             "SYLVANAS", "VOID", "AZSHARA", "AZEROTH"];
 
 // console.log(game.length);
-var chosen = Math.floor(Math.random()*25);
-var selection = game[chosen];
-var selectionLength = selection.length;
-var letters = selection.split("");
-var dashes = [];
-var attempts = 0;
-var guesses = "";
-var display = "";
 
-// console.log(selectionLength);
+// Variables declared for use in functions
+var chosen;
+var selection;
+var selectionLength;
+var letters
+var dashes;
+var attempts;
+var guesses;
+var display;
+var win;
 
-console.log(selection);
-// console.log(letters[2]);
 
 function start()  {
+    chosen = Math.floor(Math.random()*25);
+    selection = game[chosen];
+    selectionLength = selection.length;
+    letters = selection.split("");
+    dashes = [];
+    attempts = 0;
+    guesses = "";
+    display = "";
+    win = selection.length;
     for (i = 0; i < letters.length; i++) {
         dashes [i] = "_ ";
         display = display + dashes[i];
@@ -27,6 +35,8 @@ function start()  {
     display = "";
     attempts = selectionLength +3;
     document.getElementById("remaining").innerHTML = attempts;
+
+    console.log(selection);
 }
 
 window.onload = function (){
@@ -37,11 +47,14 @@ function check (item) {
     for (i = 0; i < letters.length; i++) {
         if (item == letters[i]) {
             dashes[i] = item;
+            win--;
         }
         display = display + dashes[i];
         }
         document.getElementById("game").innerHTML = display;
         display = "";
+        attempts--;
+        document.getElementById("remaining").innerHTML = attempts;
 }
 
 function guessMade (x) {
@@ -58,9 +71,6 @@ document.onkeypress = function(event) {
     // defines users key pressed
     var letterGuessed = event.key;
     guessMade(letterGuessed);
-    attempts--;
-    // Displays the remaining attempts in the html
-    document.getElementById("remaining").innerHTML = attempts;
     // For loop that runs the letter through the array of the word looking for matches
     check(letterGuessed.toUpperCase());
 
