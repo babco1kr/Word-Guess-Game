@@ -12,21 +12,26 @@
         <div class="logo">
             <img class="bfalogo" src="assets/images/BfA Logo.png"><br>       
         </div>
-        <h1 class="gameName">Word Guess!</h1>
     </header>
 
     <div class="container">
+        <div class = "mainContent">
+        <h1 class="gameName">Word Guess!</h1>
+        <br>
+        <center>
         <div class = "instructions">
             Press any key to guess a letter to figure out the word!
         </div>
+        <span id = "winOrLose"></span><br>
         <span id = "game"></span><br>
         <span id = "selection"></span>
-        Letters Guessed: <span id = "guess"></span>
+        Letters Guessed:<br> <span id = "guess"></span>
         <br>
         Guesses remaining: <span id = "remaining"></span>
+        </center>
         
 
-        
+    </div>  
     </div>
     <script src="assets/javascript/game.js"></script>
 </body>
