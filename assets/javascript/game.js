@@ -15,6 +15,8 @@ var attempts;
 var guesses;
 var display;
 var win;
+var lettersUsedArray = [];
+var answer;
 
 
 function start()  {
@@ -50,12 +52,15 @@ function check (item) {
             win--;
         }
         display = display + dashes[i];
+        answer = dashes.join("");
+        console.log(answer);
         }
         document.getElementById("game").innerHTML = display;
         display = "";
         attempts--;
         document.getElementById("remaining").innerHTML = attempts;
 }
+
 
 function guessMade (x) {
     guesses = guesses + " " + x;
@@ -71,10 +76,13 @@ document.onkeypress = function(event) {
     // defines users key pressed
     var letterGuessed = event.key;
     guessMade(letterGuessed);
-    // For loop that runs the letter through the array of the word looking for matches
     check(letterGuessed.toUpperCase());
-
-    if (attempts  < 1) {
+    // Checking to see if game is over
+    if (selection === answer) {
+        alert("You win!");
+        start();
+    }
+    else if (attempts < 0) {
         start();
     }
 };
