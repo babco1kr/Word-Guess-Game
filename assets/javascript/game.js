@@ -4,29 +4,29 @@ var game = ["HOLY", "SHADOW", "ASSASSINATION", "FROST", "DAGGER", "SWORD", "SHIE
             "SYLVANAS", "VOID", "AZSHARA", "AZEROTH"];
 
 // console.log(game.length);
-
 var chosen = Math.floor(Math.random()*25);
 var selection = game[chosen];
 var selectionLength = selection.length;
-var dashes = [];
-var attempts = selectionLength +3;
 var letters = selection.split("");
+var dashes = [];
+var attempts = 0;
 var guesses = "";
 var display = "";
 
 // console.log(selectionLength);
 
 console.log(selection);
-console.log(letters[2]);
+// console.log(letters[2]);
 
 function start()  {
     for (i = 0; i < letters.length; i++) {
         dashes [i] = "_ ";
         display = display + dashes[i];
         document.getElementById("game").innerHTML = display;
-        document.getElementById("remaining").innerHTML = attempts;
     }
     display = "";
+    attempts = selectionLength +3;
+    document.getElementById("remaining").innerHTML = attempts;
 }
 
 window.onload = function (){
