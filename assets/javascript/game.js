@@ -15,8 +15,9 @@ var attempts;
 var guesses;
 var display;
 var answer;
+var win = 0;
 
-
+// Function that actual generates the game when called
 function start()  {
     chosen = Math.floor(Math.random()*25);
     selection = game[chosen];
@@ -38,10 +39,12 @@ function start()  {
     console.log(selection);
 }
 
+// Signals function to call function that makes the game generate on window loading
 window.onload = function (){
     start();
 };
 
+// Function that checks letter guessed against the letters in the correct word
 function check (item) {
     for (i = 0; i < letters.length; i++) {
         if (item == letters[i]) {
@@ -56,7 +59,6 @@ function check (item) {
         attempts--;
         document.getElementById("remaining").innerHTML = attempts;
 }
-
 
 function guessMade (x) {
     guesses = guesses + " " + x;
@@ -79,6 +81,8 @@ document.onkeypress = function(event) {
         alert("You win!");
         guesses = "";
         document.getElementById("guess").innerHTML = guesses;
+        win++;
+        document.getElementById("wins").innerHTML = win;
         start();
     }
     else if (attempts == 0) {
