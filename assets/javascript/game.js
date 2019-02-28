@@ -38,7 +38,8 @@ function start()  {
     attempts = selectionLength +3;
     document.getElementById("remaining").innerHTML = attempts;
 
-    console.log(selection);
+    // Uncomment this to check the selection of the word
+    // console.log(selection);
 }
 
 // Signals function to call function that makes the game generate on window loading
@@ -68,7 +69,8 @@ function guessMade (x) {
     
 }
 
-console.log(dashes);
+// Uncomment this to check the dashes array
+// console.log(dashes);
 
 
 
