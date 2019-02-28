@@ -16,6 +16,8 @@ var guesses;
 var display;
 var answer;
 var win = 0;
+var loseAudio = new Audio("https://wow.zamimg.com/wowsounds/552503");
+var winAudio = new Audio("https://wow.zamimg.com/wowsounds/567383");
 
 // Function that actual generates the game when called
 function start()  {
@@ -78,7 +80,7 @@ document.onkeypress = function(event) {
     // Checking to see if game is over
     if (selection === answer) {
         document.getElementById("game").innerHTML = answer;
-        alert("You win!");
+        winAudio.play();
         guesses = "";
         document.getElementById("guess").innerHTML = guesses;
         win++;
@@ -86,7 +88,7 @@ document.onkeypress = function(event) {
         start();
     }
     else if (attempts == 0) {
-        alert("Try again")
+        loseAudio.play();
         guesses = "";
         document.getElementById("guess").innerHTML = guesses;
         start();
