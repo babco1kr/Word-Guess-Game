@@ -3,6 +3,7 @@
 This is my third project for the UCF coding bootcamp.
 
 This is a word guess game with a World of Warcraft theme.
+[Link-to-Application](https://babco1kr.github.io/Word-Guess-Game/)
 
 #on load
 
@@ -24,3 +25,6 @@ themed on.
 #Winning
 
 If the user completes the word the game also restarts but plays a different sound file from the game to signify winning
+
+Below is a Gif of the application running:<br>
+![Word-Game](./assets/images/application.gif)
