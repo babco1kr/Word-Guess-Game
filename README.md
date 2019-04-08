@@ -2,7 +2,7 @@
 
 This is my third project for the UCF coding bootcamp.
 
-This is a word guess game with a World of Warcraft theme.
+This is a word guess game with a World of Warcraft theme.<br>
 [Link-to-Application](https://babco1kr.github.io/Word-Guess-Game/)
 
 #on load
